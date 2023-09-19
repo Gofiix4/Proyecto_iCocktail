@@ -6,4 +6,4 @@ from rest_framework.views import APIView
 class Home(APIView):
     template_name="index.html"
     def get(self,request):
-        return render(request,self,template_name)
+        return render(request,self.template_name)
