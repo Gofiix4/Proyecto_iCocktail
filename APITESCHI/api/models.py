@@ -20,27 +20,15 @@ class alumno_has_genero(models.Model):
     class Meta:
         db_table='alumno_has_genero'
 
-class cocteles(models.Model):
-    idCoctel = models.IntegerField(primary_key=True,db_column='idCoctel')
-    Nombre = models.CharField(max_length=100,db_column='Nombre')
-    Descripcion = models.CharField(max_length=500,db_column='Descripcion')
-    imagen = models.CharField(max_length=250,db_column='imagen')
+class Usuarios(models.Model):
+    idUsuario = models.AutoField(primary_key=True,db_column='idUsuario')
+    Nombre = models.CharField(max_length=45,default='nombre',db_column='Nombre')
+    ApellidoP = models.CharField(max_length=45,default='apellidop',db_column='ApellidoP')
+    ApellidoM = models.CharField(max_length=45,default='apellidom',db_column='ApellidoM')
+    Fecha_nacimiento = models.DateField(db_column='Fecha_nacimiento')
+    Telefono = models.IntegerField(default=0,db_column='Telefono')
+    Correo = models.CharField(max_length=50,default='algo@algo.algo',db_column='Correo')
+    Contrasena = models.CharField(max_length=64,default='contra123',db_column='Contrasena')
     class Meta:
-        db_table='cocteles'
-
-class ingredientes(models.Model):
-    idIngrediente = models.IntegerField(primary_key=True,db_column='idIngrediente')
-    Nombre = models.CharField(max_length=50,db_column='Nombre')
-    Descripcion = models.CharField(max_length=500,db_column='Descripcion')
-    class Meta:
-        db_table='ingredientes'
-
-class recetas(models.Model):
-    idReceta = models.IntegerField(primary_key=True,db_column='idReceta')
-    fk_idCoctel = models.ForeignKey(cocteles,on_delete=models.CASCADE,db_column='fk_idCocteles')
-    fk_idIngrediente = models.ForeignKey(ingredientes,on_delete=models.CASCADE,db_column='fk_idIngredientes')
-    cantidad = models.CharField(max_length=10,db_column='Cantidad')
-    instrucciones = models.CharField(max_length=200,db_column='Instrucciones')
-    class Meta:
-        db_table='recetas'
+        db_table='Usuarios'
 
