@@ -21,12 +21,12 @@ from api.views import Error
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',Home.as_view(),name='index'),
-    path('',Signin.as_view(),name='signin'),
-    path('',Signup.as_view(),name='signup'),
+    path('signin/',Signin.as_view(),name='signin'),
+    path('signup/',Signup.as_view(),name='signup'),
     path('error/',Error.as_view(),name='error'),
-    path('',Icon.as_view(),name='icon'),
-    path('',Pages.as_view(),name='pages'),
-    path('',Starter.as_view(),name='starter'),
-    path('',Table.as_view(),name='table'),
+    path('icon/',Icon.as_view(),name='icon'),
+    path('pages/',Pages.as_view(),name='pages'),
+    path('starter/',Starter.as_view(),name='starter'),
+    path('table/',Table.as_view(),name='table'),
     
 ]

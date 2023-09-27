@@ -27,7 +27,7 @@ class Usuarios(models.Model):
     ApellidoM = models.CharField(max_length=45,default='apellidom',db_column='ApellidoM')
     Fecha_nacimiento = models.DateField(default='2000/01/01',db_column='Fecha_nacimiento')
     Telefono = models.IntegerField(default=0,db_column='Telefono')
-    Correo = models.CharField(max_length=50,default='algo@algo.algo',db_column='Correo')
+    Correo = models.EmailField(max_length=50,default='algo@algo.algo',db_column='Correo')
     Contrasena = models.CharField(max_length=64,default='contra123',db_column='Contrasena')
     class Meta:
         db_table='Usuarios'

@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
 
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
     
     <!-- Style -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 
     <title>Login #6</title>
   </head>
@@ -22,7 +23,7 @@
   
 
   <div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('../img/bg_1.jpg');"></div>
+    <div class="bg order-1 order-md-2" style="background-image: url('../static/img/bg_1.jpg');"></div>
     <div class="contents order-2 order-md-1">
 
       <div class="container">
@@ -32,7 +33,8 @@
               <h3>Sign In</h3>
               <p class="mb-4">Ingresa tu credenciales para poder acceder.</p>
             </div>
-            <form action="#" method="post">
+            <form action='/signin/' method="POST">
+              {% csrf_token%}
               <div class="form-group first">
                 <label for="username">Usuario</label>
                 <input type="text" class="form-control" id="username">
@@ -57,7 +59,7 @@
               <span class="d-block text-center my-4 text-muted">&mdash; o &mdash;</span>
               
               <div class="social-login">
-                <a href="signup.html" class="facebook btn d-flex justify-content-center align-items-center">Registrate</a>
+                <a href="{% url 'signup'%}" class="facebook btn d-flex justify-content-center align-items-center">Registrate</a>
               </div>
             </form>
           </div>
@@ -70,9 +72,9 @@
     
     
 
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
   </body>
 </html>

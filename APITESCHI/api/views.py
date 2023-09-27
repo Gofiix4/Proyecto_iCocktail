@@ -13,9 +13,22 @@ class Home(APIView):
 class Signin(APIView):
     template_name="signin.html"
     def get(self,request):
+        print('Enviando formulario')
         return render(request,self.template_name)
     def post(self,request):
+        print('Obteniendo datos')
         return render(request,self.template_name)
+    
+def signin(request):
+
+    if request.method == 'GET':
+        print('Enviando formulario')
+    else:
+        print('Obteniendo datos')
+
+    return render(request, 'signin.html', {
+
+    })
 
 class Signup(APIView):
     template_name="signup.html"
