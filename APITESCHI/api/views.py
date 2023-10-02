@@ -120,14 +120,7 @@ class Table(APIView):
         return render(request,self.template_name)
 
 #Envio del correo
-def enviar_correo(request):
-    contenido_correo = render(request, 'base_correo.html')
-    subject = 'Prueba'
-    from_email = 'carlos.eht.09@gmail.com'
-    recipient_list = ['carlos.eht.09@gmail.com']
 
-    send_mail(subject, '', from_email, recipient_list, html_message=contenido_correo.content)
-    return redirect('signin')
 
 
 def enviar_correo(request, nombre, correo, apellido, usuario, contra):
