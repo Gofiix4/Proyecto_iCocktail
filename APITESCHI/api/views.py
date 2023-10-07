@@ -39,12 +39,12 @@ def signup(request):
             except IntegrityError:
                 return render(request, 'signup.html',{
                     'form' : UserCreationForm,
-                    "mensaje" : 'Username already exist'
+                    "mensaje" : 'Este usuario ya existe, por favor ingresa otro'
                 })
                 #return HttpResponse('Username already exist')
         return render(request, 'signup.html',{
                     'form' : UserCreationForm,
-                    "mensaje" : 'Password do not match'
+                    "mensaje" : 'Ambas contraseñas no coinciden'
                 })  
         #return HttpResponse('Password do not match')
 def signout(request):
@@ -65,7 +65,7 @@ def signin(request):
             })
         else:
             login(request, user)
-            return render(request, 'index.html')
+            return redirect("/")
 
 """
 class Signin(APIView):
