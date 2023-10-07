@@ -132,7 +132,7 @@ EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'carlos.eht.09@gmail.com'
-EMAIL_HOST_PASSWORD = 'mwtt qetj xpnb qgam'
+EMAIL_HOST_PASSWORD = 'nzxi lqvh uptz ijfn'
 
 #Configuracion opcional del correo
 DEFAULT_FROM_EMAIL = 'carlos.eht.09@gmail.com'
